@@ -53,7 +53,7 @@
     "next-env.d.ts",
     "**/*.ts",
     "**/*.tsx"
-, "src/components/Header/Header.jsx"  ],
+, "src/components/Header/Header.jsx", "src/components/Navbar/Navbar.jsx"  ],
   "exclude": [
     "node_modules"
   ]

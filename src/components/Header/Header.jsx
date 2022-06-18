@@ -40,7 +40,7 @@ const Header = () => {
   };
 
   const categoryList = [
-    { name: "india", url: "/india" },
+    { name: "india", url: "/c/india" },
     { name: "nature", url: "/c/nature" },
     { name: "travel", url: "/c/travel" },
     { name: "animal", url: "/c/animal" },
@@ -60,9 +60,6 @@ const Header = () => {
     { name: "History", url: "/c/history" },
     { name: "Street Photography", url: "/c/street-photography" },
   ];
-
-  console.log(scrollX);
-  console.log(scrolEnd);
 
   return (
     <header className={styles.header}>

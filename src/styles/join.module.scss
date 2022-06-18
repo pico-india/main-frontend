@@ -1,0 +1,194 @@
+.main {
+    padding: 3rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.join {
+    background-color: var(--color-black-1);
+    display: flex;
+    width: 110rem;
+
+    &__left {
+        flex: 0 0 40%;
+        background-image: url("../../public/images/join.jpeg");
+        background-size: cover;
+        background-position: center;
+
+    }
+
+    &__right {
+        flex: 1;
+        padding: 3rem 6rem;
+    }
+
+
+    &__logoContainer {
+        position: relative;
+        height: 4.5rem;
+        width: 7.7rem;
+        margin-bottom: 0.4rem;
+    }
+
+    &__headingTertiary {
+        font-size: 2.2rem;
+        margin-bottom: 2rem;
+    }
+
+    &__button {
+        text-decoration: none;
+        color: var(--color-white);
+        background-color: var(--color-black-1);
+        border: 1px solid var(--color-white);
+        font-family: 'Raleway', sans-serif;
+        font-size: 1.5rem;
+        font-weight: 500;
+        padding: 0.5rem 1.8rem;
+        border-radius: 4px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        margin-bottom: 1.6rem;
+
+        &Text {
+            font-size: 1.6rem;
+            margin-left: 1rem;
+        }
+    }
+
+    &__googleIcon {
+        width: 2rem;
+        height: 2rem;
+        fill: var(--color-white);
+    }
+
+    &__textOr {
+        display: flex;
+        justify-content: center;
+        // margin-bottom: 0.6rem;
+    }
+
+    &__name {
+        display: flex;
+        justify-content: space-between;
+    }
+
+    &__nameFirst,
+    &__nameLast // &__email,
+
+    // &__username 
+        {
+        width: 45%;
+    }
+
+    &__input {
+        padding: 1rem 2rem;
+        font-family: inherit;
+        color: inherit;
+        font-size: 1.6rem;
+        border-radius: 2px;
+        background-color: var(--color-black-1);
+        border: none;
+        width: 100%;
+        display: block;
+        border-bottom: 1px solid var(--color-grey-1);
+        transition: all 0.3s ease-in-out;
+
+        &::-webkit-input-placeholder {
+            color: var(--color-white);
+        }
+
+        &:focus {
+            outline: none;
+            border-bottom: 1px solid var(--color-white);
+        }
+
+    }
+
+    &__label {
+        font-size: 1.4rem;
+        margin-left: 2rem;
+        margin-top: 0.7rem;
+        display: block;
+        transition: all .3s ease-in-out;
+    }
+
+    &__input:placeholder-shown+&__label {
+        opacity: 0;
+        visibility: hidden;
+        transform: translateY(-4rem);
+    }
+
+    &__linkText {
+        display: flex;
+        justify-content: flex-end;
+        margin-bottom: 1.6rem;
+
+        &,
+        &:link,
+        &:visited {
+            text-decoration: none;
+            color: #8eb5f0;
+            font-size: 1.4rem;
+        }
+    }
+
+    &__buttonc {
+        text-decoration: none;
+        font-family: 'Raleway', sans-serif;
+        color: var(--color-black);
+        font-size: 1.6rem;
+        font-weight: 600;
+        padding: 1rem 1.8rem;
+        border-radius: 4px;
+        background-color: var(--color-primary);
+        border: none;
+        cursor: pointer;
+        width: 100%;
+        margin-bottom: 1.6rem;
+    }
+
+    &__text {
+        font-size: 1.4rem;
+
+
+        &Link {
+            text-decoration: none;
+            color: #8eb5f0;
+            font-size: 1.4rem;
+            margin-left: 0.6rem;
+        }
+    }
+
+    &__iconContainer {
+        display: flex;
+        justify-content: space-between;
+    }
+
+    &__closeIcon {
+        width: 2.5rem;
+        height: 2.5rem;
+        fill: var(--color-white);
+        margin-left: 3.6rem;
+    }
+
+    &__password {
+        position: relative;
+    }
+
+    &__passwordButton {
+        border: none;
+        background-color: var(--color-black-1);
+        cursor: pointer;
+        position: absolute;
+        top: 1rem;
+        right: 0;
+
+        &Icon {
+            width: 2rem;
+            height: 2rem;
+            fill: var(--color-white);
+        }
+    }
+}
