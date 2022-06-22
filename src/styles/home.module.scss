@@ -20,6 +20,90 @@
         font-weight: 600;
     }
 
+    &__search {
+        position: relative;
+    }
+
+    &__recommendations {
+        background-color: var(--color-black-1);
+        width: 90%;
+        position: absolute;
+        top: 6rem;
+        padding: 2rem;
+        border-radius: 5px;
+        border: 1px solid var(--color-grey-1);
+        z-index: 3;
+
+        &Heading {
+            font-weight: 500;
+        }
+
+        &List {
+            list-style: none;
+            display: flex;
+            margin-top: 1rem;
+            margin-bottom: 2rem;
+        }
+
+        &Item {
+            &:not(:last-child) {
+                margin-right: 1rem;
+            }
+        }
+
+        &Links {
+
+            &,
+            &:link,
+            &:visited {
+                text-decoration: none;
+                color: var(--color-grey);
+                transition: all 0.3s ease-in-out;
+                display: flex;
+                align-items: center;
+                border: 1px solid var(--color-grey);
+                padding: 0.5rem 1.6rem;
+                font-size: 1.4rem;
+                margin-right: 1rem;
+                border-radius: 5px;
+            }
+        }
+
+        &Links1 {
+
+            &,
+            &:link,
+            &:visited {
+                text-decoration: none;
+                color: var(--color-grey);
+                transition: all 0.3s ease-in-out;
+                display: flex;
+                align-items: center;
+                border: 1px solid var(--color-grey);
+                font-size: 1.4rem;
+                margin-right: 1rem;
+                border-radius: 5px;
+            }
+        }
+
+        &Image {
+            width: 4rem;
+            height: 4rem;
+            object-fit: cover;
+        }
+
+        &Texts1 {
+            padding: 0.5rem 1.6rem;
+        }
+
+        &Icon {
+            width: 2rem;
+            height: 2rem;
+            fill: var(--color-grey);
+            margin-right: 01rem;
+        }
+    }
+
     &__input {
         padding: 1.5rem 2rem;
         font-family: inherit;
@@ -35,14 +119,9 @@
         transition: all 0.3s ease-in-out;
         margin-bottom: 1.6rem;
 
-        // @include respond(tab-land) {
-        //     width: 100%;
-        // }
-
         &:focus {
             outline: none;
             background-color: var(--color-white);
-
         }
 
         &::-webkit-input-placeholder {
@@ -181,7 +260,7 @@
     &__iconHeart {
         width: 2.5rem;
         height: 2.5rem;
-        fill: red;
+        fill: var(--color-white);
     }
 
     &__iconDownload {

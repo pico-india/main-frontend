@@ -1,6 +1,6 @@
 import Header from "@components/Header/Header.jsx";
 import Navbar from "@components/Navbar/Navbar";
-import React from "react";
+import React, { useEffect, useRef, useState } from "react";
 import styles from "@styles/home.module.scss"
 import Link from "next/link";
 import profile from "../public/images/profile.png"
@@ -16,11 +16,25 @@ import logo10 from "../public/images/10.jpeg"
 import logo11 from "../public/images/11.jpeg"
 
 
-
 const Home: React.FC = () => {
+
+  const inputRef: any = useRef(null)
+
+  const [focus, setFocus] = useState(false)
+
   const handleClick = (evt: any) => {
     evt.preventDefault()
   }
+
+  useEffect(() => {
+    document.addEventListener("click", (evt) => {
+      if (inputRef.current && !inputRef.current.contains(evt.target)) {
+        setFocus(false)
+      }
+
+    })
+  }, [])
+
 
   return (
     <div>
@@ -30,14 +44,126 @@ const Home: React.FC = () => {
         <section className={styles.background}>
           <div className={styles.background__elements}>
             <p className={styles.background__desc}>Free & high quality images that you can use for any project. <br /> Powered by creators from anywhere</p>
-            <form className={styles.background__form}>
-              <input type="text" id="search-images" className={styles.background__input} placeholder="Search Images" />
-              <button className={styles.background__button}>
-                <svg className={styles.background__searchIcon}>
-                  <use href="/icons/symbol-defs.svg#icon-search"></use>
-                </svg>
-              </button>
-            </form>
+            <div className={styles.background__search} ref={inputRef}>
+              <form className={styles.background__form}>
+                <input type="text" id="search-images" onFocus={() => (setFocus(true))} className={styles.background__input} placeholder="Search Images" />
+                <button className={styles.background__button}>
+                  <svg className={styles.background__searchIcon}>
+                    <use href="/icons/symbol-defs.svg#icon-search"></use>
+                  </svg>
+                </button>
+              </form>
+              {focus && (
+                <div className={styles.background__recommendations} >
+                  <h4 className={styles.background__recommendationsHeading}>Trending Searches</h4>
+                  <ul className={styles.background__recommendationsList}>
+                    <li className={styles.background__recommendationsItems}>
+                      <Link href="/Harshs11">
+                        <a className={styles.background__recommendationsLinks} >
+                          <svg className={styles.background__recommendationsIcon}>
+                            <use href="/icons/symbol-defs.svg#icon-trending_up"></use>
+                          </svg>
+                          <span className={styles.background__recommendationsTexts}>india</span>
+                        </a>
+                      </Link>
+                    </li>
+                    <li className={styles.background__recommendationsItems}>
+                      <Link href="/">
+                        <a className={styles.background__recommendationsLinks}>
+                          <svg className={styles.background__recommendationsIcon}>
+                            <use href="/icons/symbol-defs.svg#icon-trending_up"></use>
+                          </svg>
+                          <span className={styles.background__recommendationsTexts}>Festivals</span>
+                        </a>
+                      </Link>
+                    </li>
+                    <li className={styles.background__recommendationsItems}>
+                      <Link href="/">
+                        <a className={styles.background__recommendationsLinks}>
+                          <svg className={styles.background__recommendationsIcon}>
+                            <use href="/icons/symbol-defs.svg#icon-trending_up"></use>
+                          </svg>
+                          <span className={styles.background__recommendationsTexts}>Violet</span>
+                        </a>
+                      </Link>
+                    </li>
+                  </ul>
+                  <h4 className={styles.background__recommendationsHeading}>Trending Topics</h4>
+                  <ul className={styles.background__recommendationsList}>
+                    <li className={styles.background__recommendationsItems}>
+                      <Link href="/Harshs11">
+                        <a className={styles.background__recommendationsLinks1} >
+                          <img src={logo2.src} alt="profile" className={styles.background__recommendationsImage} />
+                          <span className={styles.background__recommendationsTexts1}>india</span>
+                        </a>
+                      </Link>
+                    </li>
+                    <li className={styles.background__recommendationsItems}>
+                      <Link href="/">
+                        <a className={styles.background__recommendationsLinks1}>
+                          <img src={logo6.src} alt="profile" className={styles.background__recommendationsImage} />
+                          <span className={styles.background__recommendationsTexts1}>Historical</span>
+                        </a>
+                      </Link>
+                    </li>
+                    <li className={styles.background__recommendationsItems}>
+                      <Link href="/">
+                        <a className={styles.background__recommendationsLinks1}>
+                          <img src={logo4.src} alt="profile" className={styles.background__recommendationsImage} />
+                          <span className={styles.background__recommendationsTexts1}>Animals</span>
+                        </a>
+                      </Link>
+                    </li>
+                    <li className={styles.background__recommendationsItems}>
+                      <Link href="/">
+                        <a className={styles.background__recommendationsLinks1}>
+                          <img src={logo8.src} alt="profile" className={styles.background__recommendationsImage} />
+                          <span className={styles.background__recommendationsTexts1}>Streets</span>
+                        </a>
+                      </Link>
+                    </li>
+                  </ul>
+                  <h4 className={styles.background__recommendationsHeading}>Trending Collections</h4>
+                  <ul className={styles.background__recommendationsList}>
+                    <li className={styles.background__recommendationsItems}>
+                      <Link href="/Harshs11">
+                        <a className={styles.background__recommendationsLinks} >
+                          <span className={styles.background__recommendationsTexts}>Mute and pastel</span>
+                        </a>
+                      </Link>
+                    </li>
+                    <li className={styles.background__recommendationsItems}>
+                      <Link href="/">
+                        <a className={styles.background__recommendationsLinks}>
+                          <span className={styles.background__recommendationsTexts}>MockUps</span>
+                        </a>
+                      </Link>
+                    </li>
+                    <li className={styles.background__recommendationsItems}>
+                      <Link href="/">
+                        <a className={styles.background__recommendationsLinks}>
+                          <span className={styles.background__recommendationsTexts}>Holi</span>
+                        </a>
+                      </Link>
+                    </li>
+                    <li className={styles.background__recommendationsItems}>
+                      <Link href="/">
+                        <a className={styles.background__recommendationsLinks}>
+                          <span className={styles.background__recommendationsTexts}>Spring</span>
+                        </a>
+                      </Link>
+                    </li>
+                    <li className={styles.background__recommendationsItems}>
+                      <Link href="/">
+                        <a className={styles.background__recommendationsLinks}>
+                          <span className={styles.background__recommendationsTexts}>Luxury</span>
+                        </a>
+                      </Link>
+                    </li>
+                  </ul>
+                </div>
+              )}
+            </div>
             <p className={styles.background__trending}>Trending Searches:&nbsp;
               <span >
                 <Link href="/"><a className={styles.background__trendingTopics}>India </a></Link>,&nbsp;
